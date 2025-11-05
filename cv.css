@@ -79,6 +79,19 @@ header {
   align-items: center;
 }
 
+/* ✅ Added for X ↔ Hamburger sizing */
+.menu-toggle svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+/* ✅ Prevent background scroll when mobile menu open */
+body.no-scroll {
+  overflow: hidden;
+  touch-action: none;
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
   background: none;

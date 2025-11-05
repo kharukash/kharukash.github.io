@@ -74,11 +74,60 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 
 // Menu Toggle Logic
+// Menu Toggle Logic (updated with X ↔ Hamburger + close on link click)
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const myInfo = document.querySelector(".myinfo");
+  const navLinks = document.querySelectorAll(".nav__item");
 
-  menuToggle.addEventListener("click", () => {
-    myInfo.classList.toggle("open");
+  if (!menuToggle || !myInfo) return;
+
+  // SVG icons
+  const svgs = {
+    hamburger: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>`,
+    close: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>`,
+  };
+
+  // Ensure default icon
+  if (!menuToggle.innerHTML.trim()) menuToggle.innerHTML = svgs.hamburger;
+
+  // Toggle handler
+  function setMenu(open) {
+    if (open) {
+      myInfo.classList.add("open");
+      menuToggle.innerHTML = svgs.close;
+      menuToggle.setAttribute("aria-expanded", "true");
+      document.body.classList.add("no-scroll");
+    } else {
+      myInfo.classList.remove("open");
+      menuToggle.innerHTML = svgs.hamburger;
+      menuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("no-scroll");
+    }
+  }
+
+  // Button click
+  menuToggle.addEventListener("click", () =>
+    setMenu(!myInfo.classList.contains("open"))
+  );
+
+  // Close on nav link click (mobile)
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (myInfo.classList.contains("open")) setMenu(false);
+    });
+  });
+
+  // Close if resized to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768 && myInfo.classList.contains("open"))
+      setMenu(false);
   });
 });
