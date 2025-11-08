@@ -92,6 +92,7 @@ header {
   transition: background-color 0.3s ease, transform 0.2s ease;
   color: inherit;
 }
+
 .theme-toggle svg,
 .theme-toggle svg * {
   stroke: currentColor !important;
@@ -142,7 +143,7 @@ body.dark-theme .nav__item {
     display: flex;
     position: fixed;
     top: 12px;
-    right: 64px;
+    right: 20px;
     z-index: 3001;
     background: transparent;
     padding: 8px;
