@@ -158,7 +158,9 @@ body.dark-theme .nav__item {
     right: 16px;
     z-index: 3002;
     background: transparent;
-    padding: 8px;
+    padding: 0px;
+    width: 100px;
+    height: 20px;
     align-items: center;
     justify-content: center;
   }
