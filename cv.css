@@ -16,7 +16,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, color 0.3s ease;
   z-index: 1000;
   background-color: inherit;
@@ -213,10 +213,4 @@ body.dark-theme .nav__item {
   position: relative;
   z-index: 1;
   min-height: 700px;
-}
-.about {
-  background: white;
-}
-.my_projects {
-  background-color: burlywood;
 }
