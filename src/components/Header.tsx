@@ -61,33 +61,33 @@ const Header = () => {
         {isMobile && (
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="p-2 text-foreground hover:text-accent transition-colors z-50"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24} strokeWidth={3} /> : <Menu size={24} strokeWidth={3} />}
           </button>
         )}
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Full Page Menu */}
       {isMobile && isMenuOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border animate-fade-in">
-          <nav className="flex flex-col px-6 py-4 gap-3">
+        <div className="fixed inset-0 top-16 bg-background z-40 animate-fade-in">
+          <nav className="flex flex-col items-center justify-center h-full gap-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className="text-left text-base text-muted-foreground hover:text-foreground transition-colors py-2"
+                className="text-2xl font-heading text-foreground hover:text-accent transition-colors"
               >
                 {item.label}
               </button>
             ))}
             <button
               onClick={toggleTheme}
-              className="flex items-center gap-2 text-base text-muted-foreground hover:text-foreground transition-colors py-2"
+              className="mt-4 p-3 text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Toggle theme"
             >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
-              <span>{isDark ? "Light Mode" : "Dark Mode"}</span>
+              {isDark ? <Sun size={24} /> : <Moon size={24} />}
             </button>
           </nav>
         </div>
