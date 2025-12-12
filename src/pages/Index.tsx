@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Education from "@/components/Education";
 import Timeline from "@/components/Timeline";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
@@ -13,6 +14,7 @@ const Index = () => {
       <Hero />
       <div className="relative z-10 bg-background">
         <About />
+        <Education />
         <Timeline />
         <Projects />
         <Contact />

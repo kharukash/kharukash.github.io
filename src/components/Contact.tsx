@@ -59,10 +59,10 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                className="p-4 rounded-full border border-border bg-card hover:border-accent hover:bg-secondary transition-all duration-300"
+                className="p-3 bg-foreground text-background rounded-md hover:opacity-80 transition-opacity"
                 aria-label={social.label}
               >
-                <social.icon size={24} />
+                <social.icon size={22} />
               </motion.a>
             ))}
           </div>
