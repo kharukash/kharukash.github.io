@@ -2,42 +2,37 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-interface TimelineItem {
+interface ExperienceItem {
   title: string;
-  subtitle: string;
-  duration: string;
+  company: string;
   location: string;
-  details?: string[];
+  duration: string;
+  skills: string[];
 }
 
-const experiences: TimelineItem[] = [
+const experiences: ExperienceItem[] = [
   {
     title: "SAP Technical Consultant",
-    subtitle: "Aspire Digital Technologies",
-    duration: "04/2024 – Present",
+    company: "Aspire Digital Technologies",
     location: "Remote",
-    details: [
-      "Worked across multiple SAP CPQ environments including Development, QA and Production.",
-      "Developed configurable Products, Quote and Custom Tables within SAP CPQ.",
-    ],
+    duration: "2024 – Present",
+    skills: ["SAP CPQ", "IronPython", "Salesforce Integration", "API Development"],
   },
-];
-
-const education: TimelineItem[] = [
   {
-    title: "Bachelor of Computer Engineering",
-    subtitle: "Terna Engineering College | 9.14 CGPA",
-    duration: "2019 – 2023",
-    location: "Nerul",
+    title: "Software Developer",
+    company: "Previous Company",
+    location: "Mumbai, IN",
+    duration: "2023 – 2024",
+    skills: ["Python", "SQL", "Power BI", "Data Analysis"],
   },
 ];
 
-const TimelineCard = ({
+const ExperienceCard = ({
   item,
   index,
   side,
 }: {
-  item: TimelineItem;
+  item: ExperienceItem;
   index: number;
   side: "left" | "right";
 }) => {
@@ -45,76 +40,59 @@ const TimelineCard = ({
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, x: side === "left" ? -60 : 60 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: side === "left" ? -60 : 60 }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
-      className={`relative flex ${side === "left" ? "justify-start" : "justify-end"} mb-8`}
-    >
-      {/* Connector dot */}
-      <div
-        className={`absolute top-4 ${
-          side === "left" ? "right-0 translate-x-1/2" : "left-0 -translate-x-1/2"
-        } w-3 h-3 bg-accent rounded-full z-10`}
-      />
-      
-      {/* Content */}
-      <div className={`w-[calc(50%-2rem)] ${side === "left" ? "pr-8 text-right" : "pl-8 text-left"}`}>
-        <h3 className="text-base md:text-lg font-heading font-semibold text-foreground">
-          {item.title}
-        </h3>
-        <p className="text-accent font-medium text-sm md:text-base">{item.subtitle}</p>
-        <p className="text-xs md:text-sm text-muted-foreground mt-1">
-          {item.duration} · {item.location}
-        </p>
-        {item.details && (
-          <ul className={`mt-3 space-y-1 text-xs md:text-sm text-muted-foreground ${side === "left" ? "text-right" : "text-left"}`}>
-            {item.details.map((detail, i) => (
-              <li key={i} className={side === "left" ? "before:content-['•'] before:mr-2" : "before:content-['•'] before:mr-2"}>
-                {detail}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </motion.div>
-  );
-};
+    <div className={`relative flex items-start ${side === "left" ? "justify-start" : "justify-end"}`}>
+      {/* Card */}
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, x: side === "left" ? -80 : 80 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: side === "left" ? -80 : 80 }}
+        transition={{ duration: 0.6, delay: index * 0.2 }}
+        className={`w-[calc(50%-3rem)] ${side === "left" ? "mr-auto" : "ml-auto"}`}
+      >
+        <div className="bg-card border border-border rounded-lg p-6 shadow-sm">
+          <h3 className="text-lg md:text-xl font-heading font-bold text-foreground">
+            {item.title}
+          </h3>
+          <p className="text-muted-foreground font-medium mt-1">{item.company}</p>
+          <p className="text-sm text-muted-foreground mt-1">{item.location}</p>
+          <p className="text-sm text-muted-foreground mt-3">
+            {item.skills.join(", ")}
+          </p>
+        </div>
+      </motion.div>
 
-const SectionLabel = ({
-  label,
-  side,
-  delay,
-}: {
-  label: string;
-  side: "left" | "right";
-  delay: number;
-}) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, x: side === "left" ? -60 : 60 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: side === "left" ? -60 : 60 }}
-      transition={{ duration: 0.6, delay }}
-      className={`relative flex ${side === "left" ? "justify-start" : "justify-end"} mb-8`}
-    >
-      {/* Connector dot */}
-      <div
-        className={`absolute top-3 ${
-          side === "left" ? "right-0 translate-x-1/2" : "left-0 -translate-x-1/2"
-        } w-4 h-4 bg-foreground rounded-full z-10`}
+      {/* Connector line to center */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+        transition={{ duration: 0.4, delay: index * 0.2 + 0.3 }}
+        className={`absolute top-8 h-px bg-border ${
+          side === "left" 
+            ? "left-[calc(50%-3rem)] right-1/2 origin-right" 
+            : "right-[calc(50%-3rem)] left-1/2 origin-left"
+        }`}
       />
-      
-      <div className={`w-[calc(50%-2rem)] ${side === "left" ? "pr-8 text-right" : "pl-8 text-left"}`}>
-        <h2 className="text-xl md:text-2xl font-heading font-bold text-foreground">
-          {label}
-        </h2>
-      </div>
-    </motion.div>
+
+      {/* Center dot */}
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={isInView ? { scale: 1 } : { scale: 0 }}
+        transition={{ duration: 0.3, delay: index * 0.2 + 0.4 }}
+        className="absolute left-1/2 top-8 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-foreground rounded-full z-10"
+      />
+
+      {/* Duration label */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.4, delay: index * 0.2 + 0.5 }}
+        className={`absolute top-6 ${
+          side === "left" ? "left-[calc(50%+1rem)]" : "right-[calc(50%+1rem)]"
+        } text-sm text-muted-foreground whitespace-nowrap`}
+      >
+        {item.duration}
+      </motion.div>
+    </div>
   );
 };
 
@@ -124,7 +102,8 @@ const Timeline = () => {
 
   return (
     <section id="experience" className="py-24 px-6 bg-secondary/30">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
+        {/* Center Title */}
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 40 }}
@@ -132,36 +111,27 @@ const Timeline = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-sm font-heading font-medium text-muted-foreground uppercase tracking-widest mb-4">
-            Journey
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+            Experience
           </h2>
-          <div className="w-12 h-0.5 bg-accent mx-auto" />
         </motion.div>
 
+        {/* Timeline */}
         <div className="relative">
-          {/* Center timeline line */}
+          {/* Center vertical line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-border" />
 
-          {/* Experience section */}
-          {experiences.map((exp, index) => (
-            <TimelineCard key={exp.title} item={exp} index={index} side="left" />
-          ))}
-          
-          {/* Experience label */}
-          <SectionLabel label="Experience" side="left" delay={experiences.length * 0.15} />
-
-          {/* Education label */}
-          <SectionLabel label="Education" side="right" delay={(experiences.length + 1) * 0.15} />
-
-          {/* Education section */}
-          {education.map((edu, index) => (
-            <TimelineCard
-              key={edu.title}
-              item={edu}
-              index={index + experiences.length + 2}
-              side="right"
-            />
-          ))}
+          {/* Experience items - alternating left and right */}
+          <div className="space-y-16">
+            {experiences.map((exp, index) => (
+              <ExperienceCard
+                key={exp.title + exp.company}
+                item={exp}
+                index={index}
+                side={index % 2 === 0 ? "left" : "right"}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

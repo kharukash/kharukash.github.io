@@ -53,7 +53,7 @@ const Header = () => {
               ))}
               <button
                 onClick={toggleTheme}
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+                className="p-2 text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="Toggle theme"
               >
                 {isDark ? (
@@ -61,9 +61,6 @@ const Header = () => {
                 ) : (
                   <Moon size={20} strokeWidth={2} fill="currentColor" />
                 )}
-                <span className="text-base font-medium">
-                  {isDark ? "Light" : "Dark"}
-                </span>
               </button>
             </nav>
           )}
