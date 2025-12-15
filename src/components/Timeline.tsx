@@ -190,10 +190,10 @@ const Timeline = () => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-sm font-heading font-medium text-muted-foreground uppercase tracking-widest mb-4 md:pl-[100px]">
+          <h2 className="text-sm font-heading font-medium text-muted-foreground uppercase tracking-widest mb-4 md:pl-[40px]">
             Experience
           </h2>
-          <div className="w-12 h-0.5 bg-accent md:ml-[100px]" />
+          <div className="w-12 h-0.5 bg-accent md:ml-[40px]" />
         </motion.div>
 
         {/* Timeline - Desktop */}
