@@ -52,17 +52,17 @@ const About = () => {
 
   return (
     <section id="about" className="py-24 px-6">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-sm font-heading font-medium text-muted-foreground uppercase tracking-widest mb-4">
+          <h2 className="text-sm font-heading font-medium text-muted-foreground uppercase tracking-widest mb-4 md:pl-[100px]">
             About
           </h2>
-          <div className="w-12 h-0.5 bg-accent mb-8" />
+          <div className="w-12 h-0.5 bg-accent mb-8 md:ml-[100px]" />
           
           <p className="text-lg md:text-xl text-foreground leading-relaxed font-body">
             I'm a passionate Software Engineer with a keen eye for building elegant, 
