@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Github } from "lucide-react";
+import portfolioPreview from "@/assets/portfolio-preview.png";
 
 interface Project {
   title: string;
@@ -9,6 +10,7 @@ interface Project {
   description: string;
   technologies: string[];
   githubUrl?: string;
+  previewImage?: string;
 }
 
 const projects: Project[] = [
@@ -32,6 +34,7 @@ const projects: Project[] = [
     description: "Vibecoded personal website with the help of Lovable AI and UX Pilot, emphasizing modern UI patterns.",
     technologies: ["HTML", "CSS", "JavaScript", "TypeScript"],
     githubUrl: "https://github.com/kharukash",
+    previewImage: portfolioPreview,
   },
 ];
 
@@ -48,15 +51,23 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       transition={{ duration: 0.6, delay: index * 0.2 }}
       className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 items-center mb-20`}
     >
-      {/* Project Image Placeholder */}
+      {/* Project Image */}
       <div className="w-full lg:w-1/2">
         <div className="bg-secondary/50 rounded-2xl aspect-video flex items-center justify-center border border-border overflow-hidden">
-          <div className="text-center p-8">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center">
-              <span className="text-2xl font-bold text-primary">{index + 1}</span>
+          {project.previewImage ? (
+            <img 
+              src={project.previewImage} 
+              alt={project.subtitle} 
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="text-center p-8">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center">
+                <span className="text-2xl font-bold text-primary">{index + 1}</span>
+              </div>
+              <p className="text-muted-foreground text-sm">Project Preview</p>
             </div>
-            <p className="text-muted-foreground text-sm">Project Preview</p>
-          </div>
+          )}
         </div>
       </div>
 

@@ -182,17 +182,18 @@ const Timeline = () => {
   return (
     <section id="experience" className="py-24 px-6 bg-secondary/30">
       <div className="max-w-5xl mx-auto">
-        {/* Center Title */}
+        {/* Section Title - Left aligned like About/Education */}
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 40 }}
           animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-muted-foreground uppercase tracking-wider">
             Experience
           </h2>
+          <div className="w-16 h-0.5 bg-muted-foreground/50 mt-3" />
         </motion.div>
 
         {/* Timeline - Desktop */}
