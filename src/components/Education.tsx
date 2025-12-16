@@ -31,12 +31,12 @@ const Education = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-sm font-heading font-medium text-muted-foreground uppercase tracking-widest mb-4 md:pl-[40px]">
+          <h2 className="text-sm font-heading font-medium text-muted-foreground uppercase tracking-widest mb-4 md:pl-[30px]">
             Education
           </h2>
-          <div className="w-12 h-0.5 bg-accent mb-8 md:ml-[40px]" />
+          <div className="w-12 h-0.5 bg-accent mb-8 md:ml-[30px]" />
 
-          <div className="space-y-6 md:pl-[20px]">
+          <div className="space-y-6 md:pl-[50px]">
             {education.map((edu, index) => (
               <motion.div
                 key={edu.degree}
