@@ -20,7 +20,8 @@ const Hero = () => {
         }}
       />
       {/* Light overlay for readability */}
-      <div className="fixed inset-0 -z-10 bg-background/60 dark:bg-background/70" />
+      {/* Light overlay for readability */}
+      <div className="fixed inset-0 -z-10 bg-background/30 dark:bg-background/50" />
 
       <div className="max-w-5xl mx-auto text-center md:text-left">
         {/* Desktop Layout */}
