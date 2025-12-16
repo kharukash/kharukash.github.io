@@ -59,12 +59,12 @@ const About = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-sm font-heading font-medium text-muted-foreground uppercase tracking-widest mb-4 md:pl-[40px]">
+          <h2 className="text-sm font-heading font-medium text-muted-foreground uppercase tracking-widest mb-4 md:pl-[30px]">
             About
           </h2>
-          <div className="w-12 h-0.5 bg-accent mb-8 md:ml-[40px]" />
+          <div className="w-12 h-0.5 bg-accent mb-8 md:ml-[30px]" />
           
-          <p className="text-lg md:text-xl text-foreground leading-relaxed font-body md:pl-[20px]">
+          <p className="text-lg md:text-xl text-foreground leading-relaxed font-body md:pl-[50px]">
             I'm a passionate Software Engineer with a keen eye for building elegant, 
             scalable solutions. I specialize in crafting seamless digital experiences 
             that bridge the gap between complex systems and intuitive user interfaces. 
