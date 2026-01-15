@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import aspireLogo from "@/assets/aspire-logo.png";
+import CareerGrowthModal from "@/components/CareerGrowthModal";
+
+interface CareerPosition {
+  title: string;
+  duration: string;
+  description?: string;
+}
 
 interface ExperienceItem {
   title: string;
@@ -11,6 +18,7 @@ interface ExperienceItem {
   duration: string;
   skills: string[];
   logo: string;
+  careerGrowth: CareerPosition[];
 }
 
 const experiences: ExperienceItem[] = [
@@ -21,6 +29,18 @@ const experiences: ExperienceItem[] = [
     duration: "2024 – Present",
     skills: ["SAP CPQ", "Salesforce", "API Development"],
     logo: aspireLogo,
+    careerGrowth: [
+      {
+        title: "Software Engineer",
+        duration: "2024 – Present",
+        description: "Working on SAP CPQ implementations and Salesforce integrations.",
+      },
+      {
+        title: "Junior Software Engineer",
+        duration: "2023 – 2024",
+        description: "Started my journey building enterprise solutions.",
+      },
+    ],
   },
 ];
 
@@ -29,10 +49,12 @@ const DesktopExperienceCard = ({
   item,
   index,
   side,
+  onTitleClick,
 }: {
   item: ExperienceItem;
   index: number;
   side: "left" | "right";
+  onTitleClick: () => void;
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -49,7 +71,10 @@ const DesktopExperienceCard = ({
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
             <div className="bg-card border border-border rounded-lg p-6 shadow-sm">
-              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground">
+              <h3 
+                onClick={onTitleClick}
+                className="text-lg md:text-xl font-heading font-bold text-foreground cursor-pointer hover:text-primary transition-colors"
+              >
                 {item.title}
               </h3>
               <p className="text-muted-foreground font-medium mt-1">{item.company}</p>
@@ -93,7 +118,10 @@ const DesktopExperienceCard = ({
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
             <div className="bg-card border border-border rounded-lg p-6 shadow-sm">
-              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground">
+              <h3 
+                onClick={onTitleClick}
+                className="text-lg md:text-xl font-heading font-bold text-foreground cursor-pointer hover:text-primary transition-colors"
+              >
                 {item.title}
               </h3>
               <p className="text-muted-foreground font-medium mt-1">{item.company}</p>
@@ -123,10 +151,12 @@ const MobileExperienceCard = ({
   item,
   index,
   isLast,
+  onTitleClick,
 }: {
   item: ExperienceItem;
   index: number;
   isLast: boolean;
+  onTitleClick: () => void;
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -159,7 +189,10 @@ const MobileExperienceCard = ({
         transition={{ duration: 0.5, delay: index * 0.2 }}
         className="flex-1 bg-card border border-border rounded-lg p-4 mb-4 shadow-sm"
       >
-        <h3 className="text-lg font-heading font-bold text-foreground">
+        <h3 
+          onClick={onTitleClick}
+          className="text-lg font-heading font-bold text-foreground cursor-pointer hover:text-primary transition-colors"
+        >
           {item.title}
         </h3>
         <p className="text-base text-foreground font-medium">{item.location}</p>
@@ -178,59 +211,75 @@ const Timeline = () => {
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-100px" });
   const isMobile = useIsMobile();
+  const [selectedExperience, setSelectedExperience] = useState<ExperienceItem | null>(null);
 
   return (
-    <section id="experience" className="py-24 px-6 bg-secondary/30">
-      <div className="max-w-5xl mx-auto">
-        {/* Section Title - Left aligned like About/Education */}
-        <motion.div
-          ref={headerRef}
-          initial={{ opacity: 0, y: 40 }}
-          animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <h2 className="text-sm font-heading font-medium text-muted-foreground uppercase tracking-widest mb-4 md:pl-[30px]">
-            Experience
-          </h2>
-          <div className="w-12 h-0.5 bg-accent md:ml-[30px]" />
-        </motion.div>
+    <>
+      <section id="experience" className="py-24 px-6 bg-secondary/30">
+        <div className="max-w-5xl mx-auto">
+          {/* Section Title - Left aligned like About/Education */}
+          <motion.div
+            ref={headerRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <h2 className="text-sm font-heading font-medium text-muted-foreground uppercase tracking-widest mb-4 md:pl-[30px]">
+              Experience
+            </h2>
+            <div className="w-12 h-0.5 bg-accent md:ml-[30px]" />
+          </motion.div>
 
-        {/* Timeline - Desktop */}
-        {!isMobile && (
-          <div className="relative">
-            {/* Center vertical line - positioned through the middle of the logo container */}
-            <div className="absolute left-[calc(50%+25px)] transform -translate-x-1/2 w-px h-full bg-border" />
+          {/* Timeline - Desktop */}
+          {!isMobile && (
+            <div className="relative">
+              {/* Center vertical line - positioned through the middle of the logo container */}
+              <div className="absolute left-[calc(50%+25px)] transform -translate-x-1/2 w-px h-full bg-border" />
 
-            {/* Experience items - alternating left and right */}
-            <div className="space-y-16 md:pl-[50px]">
+              {/* Experience items - alternating left and right */}
+              <div className="space-y-16 md:pl-[50px]">
+                {experiences.map((exp, index) => (
+                  <DesktopExperienceCard
+                    key={exp.title + exp.company}
+                    item={exp}
+                    index={index}
+                    side={index % 2 === 0 ? "left" : "right"}
+                    onTitleClick={() => setSelectedExperience(exp)}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Timeline - Mobile (LinkedIn style) */}
+          {isMobile && (
+            <div className="relative pl-2">
               {experiences.map((exp, index) => (
-                <DesktopExperienceCard
+                <MobileExperienceCard
                   key={exp.title + exp.company}
                   item={exp}
                   index={index}
-                  side={index % 2 === 0 ? "left" : "right"}
+                  isLast={index === experiences.length - 1}
+                  onTitleClick={() => setSelectedExperience(exp)}
                 />
               ))}
             </div>
-          </div>
-        )}
+          )}
+        </div>
+      </section>
 
-        {/* Timeline - Mobile (LinkedIn style) */}
-        {isMobile && (
-          <div className="relative pl-2">
-            {experiences.map((exp, index) => (
-              <MobileExperienceCard
-                key={exp.title + exp.company}
-                item={exp}
-                index={index}
-                isLast={index === experiences.length - 1}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
+      {/* Career Growth Modal */}
+      {selectedExperience && (
+        <CareerGrowthModal
+          open={!!selectedExperience}
+          onClose={() => setSelectedExperience(null)}
+          company={selectedExperience.company}
+          logo={selectedExperience.logo}
+          positions={selectedExperience.careerGrowth}
+        />
+      )}
+    </>
   );
 };
 

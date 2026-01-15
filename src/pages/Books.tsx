@@ -4,40 +4,33 @@ import { useNavigate } from "react-router-dom";
 
 interface Book {
   title: string;
-  author: string;
   description: string;
   imageUrl?: string;
 }
 
 const books: Book[] = [
   {
-    title: "Book Title 1",
-    author: "Author Name",
-    description: "A brief description about this book and why it's meaningful to me.",
+    title: "Steve Jobs",
+    description: "\"The only way to do great work is to love what you do.\" — Steve Jobs",
   },
   {
     title: "Book Title 2",
-    author: "Author Name",
     description: "A brief description about this book and why it's meaningful to me.",
   },
   {
     title: "Book Title 3",
-    author: "Author Name",
     description: "A brief description about this book and why it's meaningful to me.",
   },
   {
     title: "Book Title 4",
-    author: "Author Name",
     description: "A brief description about this book and why it's meaningful to me.",
   },
   {
     title: "Book Title 5",
-    author: "Author Name",
     description: "A brief description about this book and why it's meaningful to me.",
   },
   {
     title: "Book Title 6",
-    author: "Author Name",
     description: "A brief description about this book and why it's meaningful to me.",
   },
 ];
@@ -102,10 +95,9 @@ const Books = () => {
 
                 {/* Book Info */}
                 <div className="p-4">
-                  <h3 className="font-heading font-semibold text-foreground text-sm mb-1">
+                  <h3 className="font-heading font-semibold text-foreground text-sm mb-2">
                     {book.title}
                   </h3>
-                  <p className="text-xs text-primary mb-2">{book.author}</p>
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     {book.description}
                   </p>

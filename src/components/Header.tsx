@@ -43,8 +43,8 @@ const Header = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-6xl mx-auto px-3 md:px-4 h-16 flex items-center justify-between">
           {!isMenuOpen && (
-            <a href="#home" className="text-2xl font-heading font-bold text-foreground hover:text-accent transition-all tracking-tight">
-              ash
+            <a href="#home" className="text-2xl font-heading font-bold text-muted-foreground hover:text-foreground transition-all tracking-tight">
+              ɑsh
             </a>
           )}
           {isMenuOpen && <div />}
