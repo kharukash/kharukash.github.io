@@ -118,7 +118,7 @@ const Projects = () => {
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="pt-24 pb-12 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={headerRef}

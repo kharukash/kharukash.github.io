@@ -1,11 +1,21 @@
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import ResumeModal from "@/components/ResumeModal";
 
 const Header = () => {
   const [isDark, setIsDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains("dark");
@@ -33,7 +43,7 @@ const Header = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-6xl mx-auto px-3 md:px-4 h-16 flex items-center justify-between">
           {!isMenuOpen && (
-            <a href="#home" className="text-2xl font-heading font-normal text-foreground hover:text-accent hover:font-bold transition-all tracking-tight">
+            <a href="#home" className="text-2xl font-heading font-bold text-foreground hover:text-accent transition-all tracking-tight">
               ash
             </a>
           )}
@@ -51,6 +61,26 @@ const Header = () => {
                   {item.label}
                 </button>
               ))}
+              
+              {/* Others Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center gap-1 text-base font-medium text-muted-foreground hover:text-foreground transition-colors outline-none">
+                  Others
+                  <ChevronDown size={16} />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="bg-background border border-border z-50">
+                  <DropdownMenuItem onClick={() => setIsResumeOpen(true)} className="cursor-pointer">
+                    Resume
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigate("/books")} className="cursor-pointer">
+                    Books
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigate("/interests")} className="cursor-pointer">
+                    Interests
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               <button
                 onClick={toggleTheme}
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -91,6 +121,33 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
+            
+            {/* Others section for mobile */}
+            <button
+              onClick={() => setIsResumeOpen(true)}
+              className="text-2xl font-heading text-foreground hover:text-accent transition-colors"
+            >
+              Resume
+            </button>
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                navigate("/books");
+              }}
+              className="text-2xl font-heading text-foreground hover:text-accent transition-colors"
+            >
+              Books
+            </button>
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                navigate("/interests");
+              }}
+              className="text-2xl font-heading text-foreground hover:text-accent transition-colors"
+            >
+              Interests
+            </button>
+
             <button
               onClick={toggleTheme}
               className="mt-4 p-3 text-muted-foreground hover:text-foreground transition-colors"
@@ -101,6 +158,9 @@ const Header = () => {
           </nav>
         </div>
       )}
+
+      {/* Resume Modal */}
+      <ResumeModal open={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </>
   );
 };
