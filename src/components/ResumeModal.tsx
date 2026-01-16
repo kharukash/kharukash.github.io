@@ -44,24 +44,11 @@ const ResumeModal = ({ open, onClose }: ResumeModalProps) => {
 
         {/* Resume Content */}
         <div className="w-full h-full pt-16 overflow-auto bg-secondary/30">
-          {/* PDF Embed - Replace src with actual resume path */}
           <iframe
-            src="/resume.pdf"
+            src="/resume.pdf#toolbar=1&navpanes=0&scrollbar=1"
             className="w-full h-full min-h-[600px]"
             title="Resume"
           />
-          
-          {/* Fallback content if PDF doesn't load */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="text-center p-8 bg-card rounded-lg border border-border">
-              <p className="text-muted-foreground mb-4">
-                Resume preview will appear here.
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Add your resume.pdf to the public folder.
-              </p>
-            </div>
-          </div>
         </div>
       </DialogContent>
     </Dialog>

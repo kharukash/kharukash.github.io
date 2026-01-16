@@ -103,7 +103,8 @@ const DesktopExperienceCard = ({
           initial={{ scale: 0 }}
           animate={isInView ? { scale: 1 } : { scale: 0 }}
           transition={{ duration: 0.3, delay: index * 0.2 + 0.2 }}
-          className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center z-10 overflow-hidden"
+          onClick={onTitleClick}
+          className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center z-10 overflow-hidden cursor-pointer hover:border-primary transition-colors"
         >
           <img src={item.logo} alt={item.company} className="w-8 h-8 object-contain" />
         </motion.div>
@@ -171,7 +172,8 @@ const MobileExperienceCard = ({
           initial={{ scale: 0 }}
           animate={isInView ? { scale: 1 } : { scale: 0 }}
           transition={{ duration: 0.3, delay: index * 0.2 }}
-          className="w-10 h-10 bg-primary rounded-full flex items-center justify-center z-10 overflow-hidden shrink-0"
+          onClick={onTitleClick}
+          className="w-10 h-10 bg-primary rounded-full flex items-center justify-center z-10 overflow-hidden shrink-0 cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all"
         >
           <img src={item.logo} alt={item.company} className="w-5 h-5 object-contain" />
         </motion.div>
