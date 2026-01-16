@@ -30,7 +30,7 @@ const CareerGrowthModal = ({
 }: CareerGrowthModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto">
+      <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto scrollbar-thin">
         <DialogHeader>
           <div className="flex items-center gap-3 mb-2">
             <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center overflow-hidden">

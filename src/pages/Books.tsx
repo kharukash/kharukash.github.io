@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import steveJobsBook from "@/assets/steve-jobs-book.jpg";
 
 interface Book {
   title: string;
@@ -12,6 +13,7 @@ const books: Book[] = [
   {
     title: "Steve Jobs",
     description: "\"The only way to do great work is to love what you do.\" — Steve Jobs",
+    imageUrl: steveJobsBook,
   },
   {
     title: "Book Title 2",
