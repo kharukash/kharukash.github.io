@@ -2,11 +2,14 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import steveJobsBook from "@/assets/steve-jobs-book.jpg";
+import sophiesWorldBook from "@/assets/sophies-world-book.jpg";
+import atomicHabitsBook from "@/assets/atomic-habits-book.jpg";
 
 interface Book {
   title: string;
   description: string;
   imageUrl?: string;
+  status: "Read" | "Reading";
 }
 
 const books: Book[] = [
@@ -14,26 +17,19 @@ const books: Book[] = [
     title: "Steve Jobs",
     description: "\"The only way to do great work is to love what you do.\" — Steve Jobs",
     imageUrl: steveJobsBook,
+    status: "Read",
   },
   {
-    title: "Book Title 2",
-    description: "A brief description about this book and why it's meaningful to me.",
+    title: "Sophie's World",
+    description: "A philosophical journey through the history of Western thought.",
+    imageUrl: sophiesWorldBook,
+    status: "Reading",
   },
   {
-    title: "Book Title 3",
-    description: "A brief description about this book and why it's meaningful to me.",
-  },
-  {
-    title: "Book Title 4",
-    description: "A brief description about this book and why it's meaningful to me.",
-  },
-  {
-    title: "Book Title 5",
-    description: "A brief description about this book and why it's meaningful to me.",
-  },
-  {
-    title: "Book Title 6",
-    description: "A brief description about this book and why it's meaningful to me.",
+    title: "Atomic Habits",
+    description: "Tiny changes, remarkable results. Building better habits one step at a time.",
+    imageUrl: atomicHabitsBook,
+    status: "Reading",
   },
 ];
 
@@ -75,8 +71,19 @@ const Books = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card border border-border rounded-lg overflow-hidden"
+                className="bg-card border border-border rounded-lg overflow-hidden relative"
               >
+                {/* Status Badge */}
+                <div className="absolute top-2 right-2 z-10">
+                  <span className={`px-2 py-1 text-xs font-medium rounded ${
+                    book.status === "Read" 
+                      ? "bg-green-500/20 text-green-600 dark:text-green-400" 
+                      : "bg-blue-500/20 text-blue-600 dark:text-blue-400"
+                  }`}>
+                    {book.status}
+                  </span>
+                </div>
+
                 {/* Book Image Placeholder */}
                 <div className="aspect-[3/4] bg-secondary/50 flex items-center justify-center">
                   {book.imageUrl ? (

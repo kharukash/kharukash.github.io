@@ -21,18 +21,6 @@ const interests: Interest[] = [
     title: "Interest 3",
     description: "A brief description about this interest and what it means to me.",
   },
-  {
-    title: "Interest 4",
-    description: "A brief description about this interest and what it means to me.",
-  },
-  {
-    title: "Interest 5",
-    description: "A brief description about this interest and what it means to me.",
-  },
-  {
-    title: "Interest 6",
-    description: "A brief description about this interest and what it means to me.",
-  },
 ];
 
 const Interests = () => {
