@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import { Plus } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import aspireLogo from "@/assets/aspire-logo.png";
 import CareerGrowthModal from "@/components/CareerGrowthModal";
@@ -70,17 +71,21 @@ const DesktopExperienceCard = ({
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            <div className="bg-card border border-border rounded-lg p-6 shadow-sm">
-              <h3 
-                onClick={onTitleClick}
-                className="text-lg md:text-xl font-heading font-bold text-foreground cursor-pointer hover:text-primary transition-colors"
-              >
+            <div 
+              onClick={onTitleClick}
+              className="bg-card border border-border rounded-lg p-6 shadow-sm relative cursor-pointer hover:border-primary/50 transition-colors"
+            >
+              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground">
                 {item.title}
               </h3>
               <p className="text-muted-foreground font-medium mt-1">{item.company}</p>
               <p className="text-sm text-muted-foreground mt-3">
                 {item.skills.join(", ")}
               </p>
+              {/* Plus icon at bottom-right corner */}
+              <div className="absolute bottom-2 right-2 w-5 h-5 rounded-full bg-muted flex items-center justify-center">
+                <Plus size={12} className="text-muted-foreground" />
+              </div>
             </div>
           </motion.div>
         ) : (
@@ -118,17 +123,21 @@ const DesktopExperienceCard = ({
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            <div className="bg-card border border-border rounded-lg p-6 shadow-sm">
-              <h3 
-                onClick={onTitleClick}
-                className="text-lg md:text-xl font-heading font-bold text-foreground cursor-pointer hover:text-primary transition-colors"
-              >
+            <div 
+              onClick={onTitleClick}
+              className="bg-card border border-border rounded-lg p-6 shadow-sm relative cursor-pointer hover:border-primary/50 transition-colors"
+            >
+              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground">
                 {item.title}
               </h3>
               <p className="text-muted-foreground font-medium mt-1">{item.company}</p>
               <p className="text-sm text-muted-foreground mt-3">
                 {item.skills.join(", ")}
               </p>
+              {/* Plus icon at bottom-right corner */}
+              <div className="absolute bottom-2 right-2 w-5 h-5 rounded-full bg-muted flex items-center justify-center">
+                <Plus size={12} className="text-muted-foreground" />
+              </div>
             </div>
           </motion.div>
         ) : (
@@ -189,12 +198,10 @@ const MobileExperienceCard = ({
         initial={{ opacity: 0, x: 20 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
         transition={{ duration: 0.5, delay: index * 0.2 }}
-        className="flex-1 bg-card border border-border rounded-lg p-4 mb-4 shadow-sm"
+        onClick={onTitleClick}
+        className="flex-1 bg-card border border-border rounded-lg p-4 mb-4 shadow-sm relative cursor-pointer hover:border-primary/50 transition-colors"
       >
-        <h3 
-          onClick={onTitleClick}
-          className="text-lg font-heading font-bold text-foreground cursor-pointer hover:text-primary transition-colors"
-        >
+        <h3 className="text-lg font-heading font-bold text-foreground">
           {item.title}
         </h3>
         <p className="text-base text-foreground font-medium">{item.location}</p>
@@ -204,6 +211,10 @@ const MobileExperienceCard = ({
         <p className="text-sm text-muted-foreground mt-2">
           {item.duration}
         </p>
+        {/* Plus icon at bottom-right corner */}
+        <div className="absolute bottom-2 right-2 w-5 h-5 rounded-full bg-muted flex items-center justify-center">
+          <Plus size={12} className="text-muted-foreground" />
+        </div>
       </motion.div>
     </div>
   );

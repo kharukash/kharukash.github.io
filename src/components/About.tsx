@@ -116,18 +116,24 @@ const About = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="bg-secondary/50 rounded-xl p-4 text-center hover:bg-secondary transition-colors flex flex-col items-center gap-2"
+                className={`bg-secondary/50 rounded-xl hover:bg-secondary transition-colors ${
+                  isMobile 
+                    ? "flex flex-row items-center gap-3 px-3 py-3" 
+                    : "p-4 text-center flex flex-col items-center gap-2"
+                }`}
               >
-                {!isMobile && (
-                  <img 
-                    src={skill.icon} 
-                    alt={skill.name}
-                    className={`object-contain ${skill.name === "SAP CPQ" ? "w-14 h-14" : "w-10 h-10"}`}
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                )}
+                <img 
+                  src={skill.icon} 
+                  alt={skill.name}
+                  className={`object-contain ${
+                    isMobile 
+                      ? (skill.name === "SAP CPQ" ? "w-8 h-8" : "w-6 h-6")
+                      : (skill.name === "SAP CPQ" ? "w-14 h-14" : "w-10 h-10")
+                  }`}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
                 <span className="text-sm font-medium text-foreground">{skill.name}</span>
               </motion.div>
             ))}
