@@ -71,20 +71,25 @@ const DesktopExperienceCard = ({
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            <div 
-              onClick={onTitleClick}
-              className="bg-card border border-border rounded-lg p-6 shadow-sm relative cursor-pointer hover:border-primary/50 transition-colors"
-            >
-              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground">
-                {item.title}
-              </h3>
-              <p className="text-muted-foreground font-medium mt-1">{item.company}</p>
-              <p className="text-sm text-muted-foreground mt-3">
-                {item.skills.join(", ")}
-              </p>
-              {/* Plus icon at bottom-right corner */}
-              <div className="absolute bottom-2 right-2 w-5 h-5 rounded-full bg-muted flex items-center justify-center">
-                <Plus size={12} className="text-muted-foreground" />
+            <div className="relative">
+              <div 
+                onClick={onTitleClick}
+                className="bg-card border border-border rounded-lg p-6 shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
+              >
+                <h3 className="text-lg md:text-xl font-heading font-bold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground font-medium mt-1">{item.company}</p>
+                <p className="text-sm text-muted-foreground mt-3">
+                  {item.skills.join(", ")}
+                </p>
+              </div>
+              {/* Plus icon outside card at bottom-right */}
+              <div 
+                onClick={onTitleClick}
+                className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-muted border border-border flex items-center justify-center cursor-pointer hover:bg-muted/80 transition-colors"
+              >
+                <Plus size={14} className="text-muted-foreground" />
               </div>
             </div>
           </motion.div>
@@ -123,20 +128,25 @@ const DesktopExperienceCard = ({
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            <div 
-              onClick={onTitleClick}
-              className="bg-card border border-border rounded-lg p-6 shadow-sm relative cursor-pointer hover:border-primary/50 transition-colors"
-            >
-              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground">
-                {item.title}
-              </h3>
-              <p className="text-muted-foreground font-medium mt-1">{item.company}</p>
-              <p className="text-sm text-muted-foreground mt-3">
-                {item.skills.join(", ")}
-              </p>
-              {/* Plus icon at bottom-right corner */}
-              <div className="absolute bottom-2 right-2 w-5 h-5 rounded-full bg-muted flex items-center justify-center">
-                <Plus size={12} className="text-muted-foreground" />
+            <div className="relative">
+              <div 
+                onClick={onTitleClick}
+                className="bg-card border border-border rounded-lg p-6 shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
+              >
+                <h3 className="text-lg md:text-xl font-heading font-bold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground font-medium mt-1">{item.company}</p>
+                <p className="text-sm text-muted-foreground mt-3">
+                  {item.skills.join(", ")}
+                </p>
+              </div>
+              {/* Plus icon outside card at bottom-right */}
+              <div 
+                onClick={onTitleClick}
+                className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-muted border border-border flex items-center justify-center cursor-pointer hover:bg-muted/80 transition-colors"
+              >
+                <Plus size={14} className="text-muted-foreground" />
               </div>
             </div>
           </motion.div>
@@ -198,22 +208,29 @@ const MobileExperienceCard = ({
         initial={{ opacity: 0, x: 20 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
         transition={{ duration: 0.5, delay: index * 0.2 }}
-        onClick={onTitleClick}
-        className="flex-1 bg-card border border-border rounded-lg p-4 mb-4 shadow-sm relative cursor-pointer hover:border-primary/50 transition-colors"
+        className="flex-1 relative mb-4"
       >
-        <h3 className="text-lg font-heading font-bold text-foreground">
-          {item.title}
-        </h3>
-        <p className="text-base text-foreground font-medium">{item.location}</p>
-        <p className="text-sm text-muted-foreground mt-2">
-          {item.skills.join(", ")}
-        </p>
-        <p className="text-sm text-muted-foreground mt-2">
-          {item.duration}
-        </p>
-        {/* Plus icon at bottom-right corner */}
-        <div className="absolute bottom-2 right-2 w-5 h-5 rounded-full bg-muted flex items-center justify-center">
-          <Plus size={12} className="text-muted-foreground" />
+        <div 
+          onClick={onTitleClick}
+          className="bg-card border border-border rounded-lg p-4 shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
+        >
+          <h3 className="text-lg font-heading font-bold text-foreground">
+            {item.title}
+          </h3>
+          <p className="text-base text-foreground font-medium">{item.location}</p>
+          <p className="text-sm text-muted-foreground mt-2">
+            {item.skills.join(", ")}
+          </p>
+          <p className="text-sm text-muted-foreground mt-2">
+            {item.duration}
+          </p>
+        </div>
+        {/* Plus icon outside card at right */}
+        <div 
+          onClick={onTitleClick}
+          className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-muted border border-border flex items-center justify-center cursor-pointer hover:bg-muted/80 transition-colors"
+        >
+          <Plus size={14} className="text-muted-foreground" />
         </div>
       </motion.div>
     </div>
