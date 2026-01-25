@@ -84,16 +84,16 @@ const Books = () => {
                   </span>
                 </div>
 
-                {/* Book Image Placeholder */}
-                <div className="aspect-[3/4] bg-secondary/50 flex items-center justify-center">
+                {/* Book Image with padding */}
+                <div className="aspect-[3/4] bg-secondary/50 flex items-center justify-center p-[25px]">
                   {book.imageUrl ? (
                     <img
                       src={book.imageUrl}
                       alt={book.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   ) : (
-                    <div className="text-center p-4">
+                    <div className="text-center">
                       <div className="w-12 h-12 mx-auto mb-2 rounded bg-primary/10 flex items-center justify-center">
                         <span className="text-lg font-bold text-primary">📚</span>
                       </div>

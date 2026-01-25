@@ -73,7 +73,7 @@ const Hero = () => {
                   className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                   aria-label="GitHub"
                 >
-                  <Github size={16} fill="currentColor" />
+                  <Github size={18} fill="currentColor" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/ashish-kharuk-511b841b9/"
@@ -82,7 +82,7 @@ const Hero = () => {
                   className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin size={16} fill="currentColor" />
+                  <Linkedin size={18} fill="currentColor" />
                 </a>
                 <a
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=ashishkharuk2001@gmail.com"
@@ -91,7 +91,7 @@ const Hero = () => {
                   className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                   aria-label="Email"
                 >
-                  <Mail size={16} />
+                  <Mail size={18} />
                 </a>
               </div>
             </motion.div>
@@ -164,7 +164,7 @@ const Hero = () => {
                 className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 aria-label="GitHub"
               >
-                <Github size={16} fill="currentColor" />
+                <Github size={18} fill="currentColor" />
               </a>
               <a
                 href="https://www.linkedin.com/in/ashish-kharuk-511b841b9/"
@@ -173,7 +173,7 @@ const Hero = () => {
                 className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={16} fill="currentColor" />
+                <Linkedin size={18} fill="currentColor" />
               </a>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=ashishkharuk2001@gmail.com"
@@ -182,7 +182,7 @@ const Hero = () => {
                 className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 aria-label="Email"
               >
-                <Mail size={16} />
+                <Mail size={18} />
               </a>
             </div>
           </motion.div>

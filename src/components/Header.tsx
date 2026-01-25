@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="max-w-6xl mx-auto px-3 md:px-4 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {!isMenuOpen && (
             <a href="#home" className="text-2xl font-heading font-bold text-foreground transition-all tracking-tight">
               ɑsh
@@ -74,9 +74,6 @@ const Header = () => {
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate("/books")} className="cursor-pointer">
                     Books
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate("/interests")} className="cursor-pointer">
-                    Interests
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -138,16 +135,6 @@ const Header = () => {
             >
               Books
             </button>
-            <button
-              onClick={() => {
-                setIsMenuOpen(false);
-                navigate("/interests");
-              }}
-              className="text-2xl font-heading text-foreground hover:text-accent transition-colors"
-            >
-              Interests
-            </button>
-
             <button
               onClick={toggleTheme}
               className="mt-4 p-3 text-foreground transition-colors"
