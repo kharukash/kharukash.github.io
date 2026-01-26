@@ -64,7 +64,7 @@ const Books = () => {
             Books that have shaped my thinking and perspective.
           </motion.p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {books.map((book, index) => (
               <motion.div
                 key={book.title}
@@ -73,17 +73,6 @@ const Books = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card border border-border rounded-lg overflow-hidden relative"
               >
-                {/* Status Badge */}
-                <div className="absolute top-2 right-2 z-10">
-                  <span className={`px-2 py-1 text-xs font-medium rounded ${
-                    book.status === "Read" 
-                      ? "bg-green-500/20 text-green-600 dark:text-green-400" 
-                      : "bg-blue-500/20 text-blue-600 dark:text-blue-400"
-                  }`}>
-                    {book.status}
-                  </span>
-                </div>
-
                 {/* Book Image with padding */}
                 <div className="aspect-[3/4] bg-secondary/50 flex items-center justify-center p-[25px]">
                   {book.imageUrl ? (
@@ -103,13 +92,21 @@ const Books = () => {
                 </div>
 
                 {/* Book Info */}
-                <div className="p-4">
+                <div className="p-4 relative">
                   <h3 className="font-heading font-semibold text-foreground text-sm mb-2">
                     {book.title}
                   </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-muted-foreground leading-relaxed pr-16">
                     {book.description}
                   </p>
+                  {/* Status Badge - Bottom Right */}
+                  <span className={`absolute bottom-4 right-4 px-2 py-1 text-xs font-medium rounded ${
+                    book.status === "Read" 
+                      ? "bg-green-500/20 text-green-600 dark:text-green-400" 
+                      : "bg-blue-500/20 text-blue-600 dark:text-blue-400"
+                  }`}>
+                    {book.status}
+                  </span>
                 </div>
               </motion.div>
             ))}

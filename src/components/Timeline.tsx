@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Plus } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import aspireLogo from "@/assets/aspire-logo.png";
 import CareerGrowthModal from "@/components/CareerGrowthModal";
@@ -84,13 +83,13 @@ const DesktopExperienceCard = ({
                   {item.skills.join(", ")}
                 </p>
               </div>
-              {/* Plus icon outside card at bottom-right */}
-              <div 
+              {/* Plain + text icon at bottom-right corner */}
+              <span 
                 onClick={onTitleClick}
-                className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-muted border border-border flex items-center justify-center cursor-pointer hover:bg-muted/80 transition-colors"
+                className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors"
               >
-                <Plus size={14} className="text-muted-foreground" />
-              </div>
+                +
+              </span>
             </div>
           </motion.div>
         ) : (
@@ -141,13 +140,13 @@ const DesktopExperienceCard = ({
                   {item.skills.join(", ")}
                 </p>
               </div>
-              {/* Plus icon outside card at bottom-right */}
-              <div 
+              {/* Plain + text icon at bottom-right corner */}
+              <span 
                 onClick={onTitleClick}
-                className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-muted border border-border flex items-center justify-center cursor-pointer hover:bg-muted/80 transition-colors"
+                className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors"
               >
-                <Plus size={14} className="text-muted-foreground" />
-              </div>
+                +
+              </span>
             </div>
           </motion.div>
         ) : (
@@ -225,13 +224,13 @@ const MobileExperienceCard = ({
             {item.duration}
           </p>
         </div>
-        {/* Plus icon outside card at right */}
-        <div 
+        {/* Plain + text icon at bottom-right corner */}
+        <span 
           onClick={onTitleClick}
-          className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-muted border border-border flex items-center justify-center cursor-pointer hover:bg-muted/80 transition-colors"
+          className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors"
         >
-          <Plus size={14} className="text-muted-foreground" />
-        </div>
+          +
+        </span>
       </motion.div>
     </div>
   );
