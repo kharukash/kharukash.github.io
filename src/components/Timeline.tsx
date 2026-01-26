@@ -83,10 +83,10 @@ const DesktopExperienceCard = ({
                   {item.skills.join(", ")}
                 </p>
               </div>
-              {/* Plain + text icon at bottom-right corner */}
+              {/* Plain + text icon at bottom-right intersection, outside card */}
               <span 
                 onClick={onTitleClick}
-                className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors"
+                className="absolute -bottom-3 -right-3 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
               >
                 +
               </span>
@@ -140,10 +140,10 @@ const DesktopExperienceCard = ({
                   {item.skills.join(", ")}
                 </p>
               </div>
-              {/* Plain + text icon at bottom-right corner */}
+              {/* Plain + text icon at bottom-right intersection, outside card */}
               <span 
                 onClick={onTitleClick}
-                className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors"
+                className="absolute -bottom-3 -right-3 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
               >
                 +
               </span>
@@ -224,10 +224,10 @@ const MobileExperienceCard = ({
             {item.duration}
           </p>
         </div>
-        {/* Plain + text icon at bottom-right corner */}
+        {/* Plain + text icon at bottom-right intersection, outside card */}
         <span 
           onClick={onTitleClick}
-          className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors"
+          className="absolute -bottom-3 -right-3 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
         >
           +
         </span>
