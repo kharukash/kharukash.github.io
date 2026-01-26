@@ -86,7 +86,7 @@ const DesktopExperienceCard = ({
               {/* Plain + text icon at bottom-right intersection, outside card */}
               <span 
                 onClick={onTitleClick}
-                className="absolute -bottom-3 -right-3 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+                className="absolute bottom-0 -right-5 translate-y-1/2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
               >
                 +
               </span>
@@ -143,7 +143,7 @@ const DesktopExperienceCard = ({
               {/* Plain + text icon at bottom-right intersection, outside card */}
               <span 
                 onClick={onTitleClick}
-                className="absolute -bottom-3 -right-3 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+                className="absolute bottom-0 -right-5 translate-y-1/2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
               >
                 +
               </span>
@@ -227,7 +227,7 @@ const MobileExperienceCard = ({
         {/* Plain + text icon at bottom-right intersection, outside card */}
         <span 
           onClick={onTitleClick}
-          className="absolute -bottom-3 -right-3 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+          className="absolute bottom-0 -right-5 translate-y-1/2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
         >
           +
         </span>
