@@ -1,5 +1,7 @@
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Download, X } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
+import resumePreview from "@/assets/resume-preview.png";
 
 interface ResumeModalProps {
   open: boolean;
@@ -7,6 +9,8 @@ interface ResumeModalProps {
 }
 
 const ResumeModal = ({ open, onClose }: ResumeModalProps) => {
+  const isMobile = useIsMobile();
+
   const handleDownload = () => {
     const resumeUrl = "/resume.pdf";
     const link = document.createElement("a");
@@ -42,11 +46,24 @@ const ResumeModal = ({ open, onClose }: ResumeModalProps) => {
 
         {/* Resume Content */}
         <div className="w-full h-full pt-16 overflow-auto bg-secondary/30">
-          <iframe
-            src="/resume.pdf#toolbar=1&navpanes=0&scrollbar=1"
-            className="w-full h-full min-h-[90vh]"
-            title="Resume"
-          />
+          {isMobile ? (
+            <div className="w-full h-full flex flex-col items-center p-4">
+              <img
+                src={resumePreview}
+                alt="Resume Preview"
+                className="w-full max-w-md object-contain rounded-lg shadow-lg"
+              />
+              <p className="mt-4 text-sm text-muted-foreground text-center">
+                Tap the download button above to get the full PDF
+              </p>
+            </div>
+          ) : (
+            <iframe
+              src="/resume.pdf#toolbar=1&navpanes=0&scrollbar=1"
+              className="w-full h-full min-h-[90vh]"
+              title="Resume"
+            />
+          )}
         </div>
       </DialogContent>
     </Dialog>
