@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Github } from "lucide-react";
 import portfolioPreview from "@/assets/portfolio-preview.png";
+import superstoreDashboard from "@/assets/superstore-dashboard.png";
 
 interface Project {
   title: string;
@@ -19,21 +20,22 @@ const projects: Project[] = [
     subtitle: "A Machine Learning Approach For Phishing Attack Detection",
     description: "Developed a system using Python that distinguished between legitimate and phishing websites. Implemented ML algorithms including Logistic Regression, SVM, Decision Tree, Random Forest, and XG Boost. Achieved highest accuracy of 98.80% with Random Forest. Research Paper published in Scopus indexed Journal.",
     technologies: ["Python", "Scikit-learn", "XGBoost", "Pandas", "NumPy"],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/kharukash/A_Machine_Learning_Approach_for_Phishing_Attack_Detection",
   },
   {
     title: "Featured Project",
     subtitle: "Super Store Dashboard Using Power BI",
     description: "Created an intuitive appealing dashboard for analyzing the sales and profit of Super Store. Applied Time Series analysis to generate sales forecast for better business decisions.",
     technologies: ["Power BI", "DAX", "SQL", "Data Visualization"],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/kharukash/Superstore-Dashboard",
+    previewImage: superstoreDashboard,
   },
   {
     title: "Featured Project",
     subtitle: "Portfolio Website",
     description: "Vibecoded personal website with the help of Lovable AI and UX Pilot, emphasizing modern UI patterns.",
     technologies: ["HTML", "CSS", "JavaScript", "TypeScript"],
-    githubUrl: "https://github.com/kharukash",
+    githubUrl: "https://github.com/kharukash/kharukash.github.io",
     previewImage: portfolioPreview,
   },
 ];
@@ -58,7 +60,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             <img 
               src={project.previewImage} 
               alt={project.subtitle} 
-              className="w-[95%] h-[95%] object-contain"
+              className="w-full h-full object-cover"
             />
           ) : (
             <div className="text-center p-8">

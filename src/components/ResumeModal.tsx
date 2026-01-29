@@ -51,11 +51,8 @@ const ResumeModal = ({ open, onClose }: ResumeModalProps) => {
               <img
                 src={resumePreview}
                 alt="Resume Preview"
-                className="w-full max-w-md object-contain rounded-lg shadow-lg"
+                className="w-full object-contain rounded-lg shadow-lg"
               />
-              <p className="mt-4 text-sm text-muted-foreground text-center">
-                Tap the download button above to get the full PDF
-              </p>
             </div>
           ) : (
             <iframe
