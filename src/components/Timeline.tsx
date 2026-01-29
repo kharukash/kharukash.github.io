@@ -86,7 +86,7 @@ const DesktopExperienceCard = ({
               {/* Plain + text icon at bottom-right intersection, outside card */}
               <span 
                 onClick={onTitleClick}
-                className="absolute bottom-0 -right-5 translate-y-1/2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+                className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
               >
                 +
               </span>
@@ -143,7 +143,7 @@ const DesktopExperienceCard = ({
               {/* Plain + text icon at bottom-right intersection, outside card */}
               <span 
                 onClick={onTitleClick}
-                className="absolute bottom-0 -right-5 translate-y-1/2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+                className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
               >
                 +
               </span>
@@ -191,7 +191,7 @@ const MobileExperienceCard = ({
           animate={isInView ? { scale: 1 } : { scale: 0 }}
           transition={{ duration: 0.3, delay: index * 0.2 }}
           onClick={onTitleClick}
-          className="w-10 h-10 bg-primary rounded-full flex items-center justify-center z-10 overflow-hidden shrink-0 cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all"
+          className="w-10 h-10 bg-background rounded-full flex items-center justify-center z-10 overflow-hidden shrink-0 cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all border border-border"
         >
           <img src={item.logo} alt={item.company} className="w-5 h-5 object-contain" />
         </motion.div>
@@ -227,7 +227,7 @@ const MobileExperienceCard = ({
         {/* Plain + text icon at bottom-right intersection, outside card */}
         <span 
           onClick={onTitleClick}
-          className="absolute bottom-0 -right-5 translate-y-1/2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+          className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
         >
           +
         </span>
