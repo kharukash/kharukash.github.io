@@ -74,7 +74,7 @@ const Books = () => {
                 className="bg-card border border-border rounded-lg overflow-hidden relative"
               >
                 {/* Book Image with padding */}
-                <div className="aspect-[3/4] bg-secondary/50 flex items-center justify-center p-[25px]">
+                <div className="aspect-[3/4] bg-secondary/50 flex items-center justify-center p-[15px]">
                   {book.imageUrl ? (
                     <img
                       src={book.imageUrl}
