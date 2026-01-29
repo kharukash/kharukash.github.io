@@ -96,16 +96,38 @@ const Header = () => {
               className="p-2 text-foreground hover:text-accent transition-colors"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} strokeWidth={3} /> : <Menu size={24} strokeWidth={3} />}
+              <Menu size={24} strokeWidth={3} />
             </button>
           )}
         </div>
       </header>
 
-      {/* Mobile Full Page Menu Overlay */}
-      {isMobile && isMenuOpen && (
-        <div className="fixed inset-0 bg-background z-40 flex flex-col items-center justify-center animate-fade-in">
-          <nav className="flex flex-col items-center gap-8">
+      {/* Mobile Slide-in Menu */}
+      {isMobile && (
+        <div 
+          className={`fixed inset-0 z-40 transition-transform duration-300 ease-in-out ${
+            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          {/* Background overlay */}
+          <div className="absolute inset-0 bg-background" />
+          
+          {/* Fixed header within menu */}
+          <div className="absolute top-0 left-0 right-0 h-16 flex items-center justify-between px-[25px] border-b border-border bg-background">
+            <a href="#home" className="text-2xl font-heading font-bold text-foreground tracking-tight">
+              ɑsh
+            </a>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="p-2 text-foreground hover:text-accent transition-colors"
+              aria-label="Close menu"
+            >
+              <X size={24} strokeWidth={3} />
+            </button>
+          </div>
+          
+          {/* Menu content */}
+          <nav className="relative flex flex-col items-center justify-center h-full gap-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -118,7 +140,10 @@ const Header = () => {
             
             {/* Others section for mobile */}
             <button
-              onClick={() => setIsResumeOpen(true)}
+              onClick={() => {
+                setIsResumeOpen(true);
+                setIsMenuOpen(false);
+              }}
               className="text-2xl font-heading text-foreground hover:text-accent transition-colors"
             >
               Resume
