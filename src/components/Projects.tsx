@@ -75,7 +75,6 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
       {/* Project Info */}
       <div className={`w-full lg:w-1/2 ${isEven ? 'lg:text-right' : 'lg:text-left'}`}>
-        <p className="text-primary font-medium text-sm mb-2">{project.title}</p>
         <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-4">
           {project.subtitle}
         </h3>
@@ -86,7 +85,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           </p>
         </div>
 
-        <div className={`flex flex-wrap gap-3 mb-4 ${isEven ? 'lg:justify-end' : 'lg:justify-start'}`}>
+        <div className={`flex flex-wrap items-center gap-3 ${isEven ? 'lg:justify-end' : 'lg:justify-start'}`}>
           {project.technologies.map((tech) => (
             <span
               key={tech}
@@ -95,21 +94,18 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               {tech}
             </span>
           ))}
-        </div>
-
-        {project.githubUrl && (
-          <div className={`${isEven ? 'lg:text-right' : 'lg:text-left'}`}>
+          {project.githubUrl && (
             <a
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-10 h-10 text-muted-foreground hover:text-foreground transition-colors"
+              className="inline-flex items-center justify-center w-8 h-8 text-muted-foreground hover:text-foreground transition-colors"
               aria-label="View on GitHub"
             >
-              <Github size={22} />
+              <Github size={20} />
             </a>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </motion.div>
   );

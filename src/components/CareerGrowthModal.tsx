@@ -67,7 +67,7 @@ const CareerGrowthModal = ({
                   {position.duration}
                 </p>
                 {position.description && (
-                  <p className="text-sm text-muted-foreground mt-2">
+                  <p className="text-sm text-muted-foreground mt-2 whitespace-pre-line">
                     {position.description}
                   </p>
                 )}
