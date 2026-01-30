@@ -33,12 +33,19 @@ const experiences: ExperienceItem[] = [
       {
         title: "Software Engineer",
         duration: "2024 – Present",
-        description: "Working on SAP CPQ implementations and Salesforce integrations.",
+        description: `Part of APG CPQ Project - Applied Materials. Worked across multiple SAP CPQ environments including Development, QA and Production.
+• Developed configurable Products, Quote and Custom Tables within SAP CPQ.
+• Designed and Implemented efficient pricing for different markets based on Exchange Rates using Python and SQL.
+• Created CTX tags for event based Quote Field data population, Quote Visibility control and Document Generation.
+• Customized SAP CPQ workflows, Quote approvals and Email notifications.
+• Conducted onsite visits to Bangalore during the ITC/UAT phase to ensure smooth testing and coordination.
+• Oversaw and Ensured timely resolution of all incidents during the Hypercare phase.
+• Currently part of a 2-member CIP team working on future enhancements.`,
       },
       {
         title: "Junior Software Engineer",
         duration: "2023 – 2024",
-        description: "Started my journey building enterprise solutions.",
+        description: "Practical Exposure to SAP CPQ configuration, pricing and quoting.",
       },
     ],
   },
