@@ -33,7 +33,8 @@ const experiences: ExperienceItem[] = [
       {
         title: "Software Engineer",
         duration: "2024 – Present",
-        description: `Part of APG CPQ Project - Applied Materials. Worked across multiple SAP CPQ environments including Development, QA and Production.
+        description: `Part of APG CPQ Project - Applied Materials.
+Worked across multiple SAP CPQ environments including Development, QA and Production.
 • Developed configurable Products, Quote and Custom Tables within SAP CPQ.
 • Designed and Implemented efficient pricing for different markets based on Exchange Rates using Python and SQL.
 • Created CTX tags for event based Quote Field data population, Quote Visibility control and Document Generation.
@@ -90,10 +91,10 @@ const DesktopExperienceCard = ({
                   {item.skills.join(", ")}
                 </p>
               </div>
-              {/* Plain + text icon at bottom-right intersection, outside card */}
+              {/* Plain + text icon inset at bottom-right corner of card */}
               <span 
                 onClick={onTitleClick}
-                className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+                className="absolute bottom-1.5 right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
               >
                 +
               </span>
@@ -147,10 +148,10 @@ const DesktopExperienceCard = ({
                   {item.skills.join(", ")}
                 </p>
               </div>
-              {/* Plain + text icon at bottom-right intersection, outside card */}
+              {/* Plain + text icon inset at bottom-right corner of card */}
               <span 
                 onClick={onTitleClick}
-                className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+                className="absolute bottom-1.5 right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
               >
                 +
               </span>
@@ -231,10 +232,10 @@ const MobileExperienceCard = ({
             {item.duration}
           </p>
         </div>
-        {/* Plain + text icon at bottom-right intersection, outside card */}
+        {/* Plain + text icon inset at bottom-right corner of card */}
         <span 
           onClick={onTitleClick}
-          className="absolute -bottom-2 -right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+          className="absolute bottom-1.5 right-2 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
         >
           +
         </span>
