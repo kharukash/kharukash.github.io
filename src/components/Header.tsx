@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="max-w-6xl mx-auto px-[25px] md:px-[20px] h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-[20px] h-16 flex items-center justify-between">
           <a href="#home" className={`text-2xl font-heading font-bold text-foreground transition-all tracking-tight ${isMenuOpen ? 'invisible' : ''}`}>
             ɑsh
           </a>
@@ -113,7 +113,7 @@ const Header = () => {
           <div className="absolute inset-0 bg-background" />
           
           {/* Fixed header within menu */}
-          <div className="absolute top-0 left-0 right-0 h-16 flex items-center justify-between px-[25px] border-b border-border bg-background">
+          <div className="absolute top-0 left-0 right-0 h-16 flex items-center justify-between px-[20px] border-b border-border bg-background">
             <a href="#home" className="text-2xl font-heading font-bold text-foreground tracking-tight">
               ɑsh
             </a>
