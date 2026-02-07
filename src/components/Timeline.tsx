@@ -91,10 +91,10 @@ const DesktopExperienceCard = ({
                   {item.skills.join(", ")}
                 </p>
               </div>
-              {/* Plain + text icon inset at bottom-right corner of card */}
+              {/* Plus icon at bottom-right corner, half inside/half outside */}
               <span 
                 onClick={onTitleClick}
-                className="absolute bottom-2 right-3 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+                className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 w-6 h-6 bg-background border border-border rounded-full flex items-center justify-center text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground hover:border-primary transition-colors z-20"
               >
                 +
               </span>
@@ -148,10 +148,10 @@ const DesktopExperienceCard = ({
                   {item.skills.join(", ")}
                 </p>
               </div>
-              {/* Plain + text icon inset at bottom-right corner of card */}
+              {/* Plus icon at bottom-right corner, half inside/half outside */}
               <span 
                 onClick={onTitleClick}
-                className="absolute bottom-2 right-3 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+                className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 w-6 h-6 bg-background border border-border rounded-full flex items-center justify-center text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground hover:border-primary transition-colors z-20"
               >
                 +
               </span>
@@ -232,10 +232,10 @@ const MobileExperienceCard = ({
             {item.duration}
           </p>
         </div>
-        {/* Plain + text icon inset at bottom-right corner of card */}
+        {/* Plus icon at bottom-right corner, half inside/half outside */}
         <span 
           onClick={onTitleClick}
-          className="absolute bottom-2 right-3 text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
+          className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 w-6 h-6 bg-background border border-border rounded-full flex items-center justify-center text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground hover:border-primary transition-colors z-20"
         >
           +
         </span>
