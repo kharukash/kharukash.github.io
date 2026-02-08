@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Github } from "lucide-react";
 import portfolioPreview from "@/assets/portfolio-preview.png";
 import superstoreDashboard from "@/assets/superstore-dashboard.png";
+import phishingDetector from "@/assets/phishing-detector.png";
 
 interface Project {
   title: string;
@@ -21,6 +22,7 @@ const projects: Project[] = [
     description: "Developed a system using Python that distinguished between legitimate and phishing websites. Implemented ML algorithms including Logistic Regression, SVM, Decision Tree, Random Forest, and XG Boost. Achieved highest accuracy of 98.80% with Random Forest. Research Paper published in Scopus indexed Journal.",
     technologies: ["Python", "Scikit-learn", "XGBoost", "Pandas", "NumPy"],
     githubUrl: "https://github.com/kharukash/A_Machine_Learning_Approach_for_Phishing_Attack_Detection",
+    previewImage: phishingDetector,
   },
   {
     title: "Featured Project",
@@ -61,6 +63,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               src={project.previewImage} 
               alt={project.subtitle} 
               className="w-full h-full object-contain"
+              loading="eager"
             />
           ) : (
             <div className="text-center p-8">

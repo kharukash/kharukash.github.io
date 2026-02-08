@@ -42,7 +42,7 @@ const Header = () => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="w-full px-[20px] h-16 flex items-center justify-between">
-          <a href="#home" className={`text-2xl font-heading font-bold text-foreground transition-all tracking-tight ${isMenuOpen ? 'invisible' : ''}`}>
+          <a href="#home" className="text-2xl font-heading font-bold text-foreground transition-all tracking-tight">
             ɑsh
           </a>
 
@@ -96,7 +96,7 @@ const Header = () => {
               className="p-2 text-foreground hover:text-accent transition-colors"
               aria-label="Toggle menu"
             >
-              <Menu size={24} strokeWidth={3} />
+              {isMenuOpen ? <X size={24} strokeWidth={3} /> : <Menu size={24} strokeWidth={3} />}
             </button>
           )}
         </div>
@@ -112,19 +112,8 @@ const Header = () => {
           {/* Background overlay */}
           <div className="absolute inset-0 bg-background" />
           
-          {/* Fixed header within menu */}
-          <div className="absolute top-0 left-0 right-0 h-16 flex items-center justify-between px-[20px] border-b border-border bg-background">
-            <a href="#home" className="text-2xl font-heading font-bold text-foreground tracking-tight">
-              ɑsh
-            </a>
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="p-2 text-foreground hover:text-accent transition-colors"
-              aria-label="Close menu"
-            >
-              <X size={24} strokeWidth={3} />
-            </button>
-          </div>
+          {/* Spacer for header height */}
+          <div className="h-16" />
           
           {/* Menu content */}
           <nav className="relative flex flex-col items-center justify-center h-full gap-8">

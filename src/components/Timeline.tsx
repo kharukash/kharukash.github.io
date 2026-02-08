@@ -27,7 +27,7 @@ const experiences: ExperienceItem[] = [
     company: "Aspire Digital Technologies",
     location: "Remote",
     duration: "2024 – Present",
-    skills: ["SAP CPQ", "Salesforce", "API Development"],
+    skills: ["Implemented End-to-End Quote-to-Cash process for APG CPQ 2.0 Project", "SAP CPQ, Salesforce Integration"],
     logo: aspireLogo,
     careerGrowth: [
       {
@@ -78,26 +78,21 @@ const DesktopExperienceCard = ({
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            <div className="relative">
-              <div 
-                onClick={onTitleClick}
-                className="bg-card border border-border rounded-lg p-6 shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
-              >
-                <h3 className="text-lg md:text-xl font-heading font-bold text-foreground">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground font-medium mt-1">{item.company}</p>
-                <p className="text-sm text-muted-foreground mt-3">
-                  {item.skills.join(", ")}
-                </p>
+            <div 
+              onClick={onTitleClick}
+              className="bg-card border border-border rounded-lg p-6 shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
+            >
+              <p className="text-muted-foreground font-medium">{item.company}</p>
+              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mt-1">
+                {item.title}
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1">{item.location}</p>
+              <div className="text-sm text-muted-foreground mt-3 space-y-1">
+                {item.skills.map((skill, i) => (
+                  <p key={i}>• {skill}</p>
+                ))}
               </div>
-              {/* Plus icon at bottom-right corner, half inside/half outside */}
-              <span 
-                onClick={onTitleClick}
-                className="absolute -bottom-3 -right-3 w-6 h-6 inline-flex items-center justify-center text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
-              >
-                +
-              </span>
+              <p className="text-sm text-muted-foreground mt-3">{item.duration}</p>
             </div>
           </motion.div>
         ) : (
@@ -135,26 +130,21 @@ const DesktopExperienceCard = ({
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            <div className="relative">
-              <div 
-                onClick={onTitleClick}
-                className="bg-card border border-border rounded-lg p-6 shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
-              >
-                <h3 className="text-lg md:text-xl font-heading font-bold text-foreground">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground font-medium mt-1">{item.company}</p>
-                <p className="text-sm text-muted-foreground mt-3">
-                  {item.skills.join(", ")}
-                </p>
+            <div 
+              onClick={onTitleClick}
+              className="bg-card border border-border rounded-lg p-6 shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
+            >
+              <p className="text-muted-foreground font-medium">{item.company}</p>
+              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mt-1">
+                {item.title}
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1">{item.location}</p>
+              <div className="text-sm text-muted-foreground mt-3 space-y-1">
+                {item.skills.map((skill, i) => (
+                  <p key={i}>• {skill}</p>
+                ))}
               </div>
-              {/* Plus icon at bottom-right corner, half inside/half outside */}
-              <span 
-                onClick={onTitleClick}
-                className="absolute -bottom-3 -right-3 w-6 h-6 inline-flex items-center justify-center text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
-              >
-                +
-              </span>
+              <p className="text-sm text-muted-foreground mt-3">{item.duration}</p>
             </div>
           </motion.div>
         ) : (
@@ -215,30 +205,24 @@ const MobileExperienceCard = ({
         initial={{ opacity: 0, x: 20 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
         transition={{ duration: 0.5, delay: index * 0.2 }}
-        className="flex-1 relative mb-4"
+        className="flex-1 mb-4"
       >
         <div 
           onClick={onTitleClick}
           className="bg-card border border-border rounded-lg p-4 shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
         >
-          <h3 className="text-lg font-heading font-bold text-foreground">
+          <p className="text-muted-foreground font-medium">{item.company}</p>
+          <h3 className="text-lg font-heading font-bold text-foreground mt-1">
             {item.title}
           </h3>
-          <p className="text-base text-foreground font-medium">{item.location}</p>
-          <p className="text-sm text-muted-foreground mt-2">
-            {item.skills.join(", ")}
-          </p>
-          <p className="text-sm text-muted-foreground mt-2">
-            {item.duration}
-          </p>
+          <p className="text-sm text-muted-foreground mt-1">{item.location}</p>
+          <div className="text-sm text-muted-foreground mt-3 space-y-1">
+            {item.skills.map((skill, i) => (
+              <p key={i}>• {skill}</p>
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground mt-3">{item.duration}</p>
         </div>
-        {/* Plus icon at bottom-right corner, half inside/half outside */}
-        <span 
-          onClick={onTitleClick}
-          className="absolute -bottom-3 -right-3 w-6 h-6 inline-flex items-center justify-center text-muted-foreground text-lg font-medium cursor-pointer hover:text-foreground transition-colors z-20"
-        >
-          +
-        </span>
       </motion.div>
     </div>
   );

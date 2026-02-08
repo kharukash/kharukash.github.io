@@ -108,6 +108,8 @@ const Hero = () => {
               src={profilePhoto}
               alt="Ashish Kharuk"
               className="w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
             />
           </motion.div>
         </div>
@@ -124,6 +126,8 @@ const Hero = () => {
               src={profilePhoto}
               alt="Ashish Kharuk"
               className="w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
             />
           </motion.div>
 
