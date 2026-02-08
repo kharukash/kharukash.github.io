@@ -66,11 +66,10 @@ const About = () => {
           <div className="w-12 h-0.5 bg-accent mb-8 md:ml-[30px]" />
           
           <p className="text-lg md:text-xl text-foreground leading-relaxed font-body md:pl-[50px]">
-            I'm a passionate Software Engineer with a keen eye for building elegant, 
-            scalable solutions. I specialize in crafting seamless digital experiences 
-            that bridge the gap between complex systems and intuitive user interfaces. 
-            When I'm not coding, you'll find me exploring new technologies, contributing 
-            to open-source projects, or sharing knowledge with the developer community.
+            I'm a passionate Software Engineer with experience working on enterprise applications, 
+            closely collaborating with stakeholders to understand business requirements and translate 
+            them into effective system solutions. I continuously explore new technologies and evolving 
+            AI trends, learning how they can be leveraged alongside my current work.
           </p>
         </motion.div>
 

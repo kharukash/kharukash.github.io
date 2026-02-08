@@ -82,11 +82,10 @@ const DesktopExperienceCard = ({
               onClick={onTitleClick}
               className="bg-card border border-border rounded-lg p-6 shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
             >
-              <p className="text-muted-foreground font-medium">{item.company}</p>
-              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mt-1">
+              <p className="text-foreground font-bold">{item.company}</p>
+              <h3 className="text-lg md:text-xl font-heading text-foreground mt-1">
                 {item.title}
               </h3>
-              <p className="text-sm text-muted-foreground mt-1">{item.location}</p>
               <div className="text-sm text-muted-foreground mt-3 space-y-1">
                 {item.skills.map((skill, i) => (
                   <p key={i}>• {skill}</p>
@@ -134,17 +133,15 @@ const DesktopExperienceCard = ({
               onClick={onTitleClick}
               className="bg-card border border-border rounded-lg p-6 shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
             >
-              <p className="text-muted-foreground font-medium">{item.company}</p>
-              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mt-1">
+              <p className="text-foreground font-bold">{item.company}</p>
+              <h3 className="text-lg md:text-xl font-heading text-foreground mt-1">
                 {item.title}
               </h3>
-              <p className="text-sm text-muted-foreground mt-1">{item.location}</p>
               <div className="text-sm text-muted-foreground mt-3 space-y-1">
                 {item.skills.map((skill, i) => (
                   <p key={i}>• {skill}</p>
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground mt-3">{item.duration}</p>
             </div>
           </motion.div>
         ) : (
@@ -211,17 +208,15 @@ const MobileExperienceCard = ({
           onClick={onTitleClick}
           className="bg-card border border-border rounded-lg p-4 shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
         >
-          <p className="text-muted-foreground font-medium">{item.company}</p>
-          <h3 className="text-lg font-heading font-bold text-foreground mt-1">
+          <p className="text-foreground font-bold">{item.company}</p>
+          <h3 className="text-lg font-heading text-foreground mt-1">
             {item.title}
           </h3>
-          <p className="text-sm text-muted-foreground mt-1">{item.location}</p>
           <div className="text-sm text-muted-foreground mt-3 space-y-1">
             {item.skills.map((skill, i) => (
               <p key={i}>• {skill}</p>
             ))}
           </div>
-          <p className="text-sm text-muted-foreground mt-3">{item.duration}</p>
         </div>
       </motion.div>
     </div>
