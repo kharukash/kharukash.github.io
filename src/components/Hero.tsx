@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
-import bgLight from "@/assets/bg-light.png";
-import bgDark from "@/assets/bg-dark.png";
 import profilePhoto from "@/assets/profile-photo.png";
+import HeroBackground from "./HeroBackground";
 
 const Hero = () => {
   return (
@@ -10,28 +9,8 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center pt-16 px-6"
     >
-      {/* Light mode background */}
-      <div
-        className="fixed inset-0 w-full h-full -z-10 dark:hidden"
-        style={{
-          backgroundImage: `url(${bgLight})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
-      {/* Dark mode background */}
-      <div
-        className="fixed inset-0 w-full h-full -z-10 hidden dark:block"
-        style={{
-          backgroundImage: `url(${bgDark})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
-      {/* Light overlay for readability */}
-      <div className="fixed inset-0 -z-10 bg-background/30 dark:bg-background/40" />
+      {/* Vector line art background */}
+      <HeroBackground />
 
       <div className="max-w-5xl mx-auto text-center md:text-left">
         {/* Desktop Layout */}
@@ -73,7 +52,7 @@ const Hero = () => {
                   className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                   aria-label="GitHub"
                 >
-                  <Github size={18} fill="currentColor" />
+                  <Github size={18} className="text-background" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/ashish-kharuk-511b841b9/"
@@ -168,7 +147,7 @@ const Hero = () => {
                 className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 aria-label="GitHub"
               >
-                <Github size={18} fill="currentColor" />
+                <Github size={18} className="text-background" />
               </a>
               <a
                 href="https://www.linkedin.com/in/ashish-kharuk-511b841b9/"
