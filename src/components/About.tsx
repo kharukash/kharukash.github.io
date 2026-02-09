@@ -129,7 +129,7 @@ const About = () => {
                     isMobile 
                       ? (skill.name === "SAP CPQ" ? "w-8 h-8" : "w-6 h-6")
                       : (skill.name === "SAP CPQ" ? "w-14 h-14" : "w-10 h-10")
-                  }`}
+                  } ${skill.name === "Github" ? "dark:invert" : ""}`}
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
                   }}
