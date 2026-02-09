@@ -12,7 +12,7 @@ const Hero = () => {
       {/* Vector line art background */}
       <HeroBackground />
 
-      <div className="max-w-5xl mx-auto text-center md:text-left">
+      <div className="relative z-10 max-w-5xl mx-auto text-center md:text-left">
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center gap-12 md:pl-[50px]">
           {/* Text Content */}
@@ -33,7 +33,7 @@ const Hero = () => {
             >
               Ashish Kharuk
             </motion.h1>
-            
+
             {/* Role with Social Icons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ const Hero = () => {
                   className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                   aria-label="GitHub"
                 >
-                  <Github size={18} />
+                  <Github size={18} className="text-background" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/ashish-kharuk-511b841b9/"
@@ -147,7 +147,7 @@ const Hero = () => {
                 className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 aria-label="GitHub"
               >
-                <Github size={18} />
+                <Github size={18} className="text-background" />
               </a>
               <a
                 href="https://www.linkedin.com/in/ashish-kharuk-511b841b9/"
