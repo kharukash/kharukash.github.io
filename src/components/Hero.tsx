@@ -52,7 +52,7 @@ const Hero = () => {
                   className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                   aria-label="GitHub"
                 >
-                  <Github size={18} className="text-background" />
+                  <Github size={18} />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/ashish-kharuk-511b841b9/"
@@ -147,7 +147,7 @@ const Hero = () => {
                 className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 aria-label="GitHub"
               >
-                <Github size={18} className="text-background" />
+                <Github size={18} />
               </a>
               <a
                 href="https://www.linkedin.com/in/ashish-kharuk-511b841b9/"
