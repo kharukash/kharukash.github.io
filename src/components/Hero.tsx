@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center pt-16 px-6"
+      className="relative min-h-screen flex items-center justify-center pt-16 md:pt-16 px-6"
     >
       {/* Vector line art background */}
       <HeroBackground />
@@ -64,7 +64,7 @@ const Hero = () => {
                   <Linkedin size={18} fill="currentColor" />
                 </a>
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=ashishkharuk2001@gmail.com"
+                  href="mailto:ashishkharuk2001@gmail.com?subject=Hello%20Ashish&body=Hi%20Ashish%2C%0A%0AI%20wanted%20to%20reach%20out%20to%20you%20regarding%20"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
@@ -94,7 +94,7 @@ const Hero = () => {
         </div>
 
         {/* Mobile Layout */}
-        <div className="flex md:hidden flex-col items-center gap-4">
+        <div className="flex md:hidden flex-col items-center gap-4 -mt-16">
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -159,7 +159,7 @@ const Hero = () => {
                 <Linkedin size={18} fill="currentColor" />
               </a>
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=ashishkharuk2001@gmail.com"
+                href="mailto:ashishkharuk2001@gmail.com?subject=Hello%20Ashish&body=Hi%20Ashish%2C%0A%0AI%20wanted%20to%20reach%20out%20to%20you%20regarding%20"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
