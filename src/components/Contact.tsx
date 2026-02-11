@@ -24,7 +24,7 @@ const socialLinks = [
   },
   {
     icon: Mail,
-    href: "https://mail.google.com/mail/?view=cm&fs=1&to=ashishkharuk2001@gmail.com",
+    href: "mailto:ashishkharuk2001@gmail.com?subject=Hello%20Ashish&body=Hi%20Ashish%2C%0A%0AI%20wanted%20to%20reach%20out%20to%20you%20regarding%20",
     label: "Email",
     fill: false,
   },
