@@ -81,7 +81,7 @@ const Hero = () => {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="w-[180px] h-[180px] rounded-full border-2 border-border overflow-hidden shrink-0"
+            className="w-[200px] h-[200px] rounded-full border-2 border-border overflow-hidden shrink-0"
           >
             <img
               src={profilePhoto}
@@ -99,7 +99,7 @@ const Hero = () => {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="w-[150px] h-[150px] rounded-full border-2 border-border overflow-hidden shrink-0"
+            className="w-[165px] h-[165px] rounded-full border-2 border-border overflow-hidden shrink-0"
           >
             <img
               src={profilePhoto}
