@@ -29,7 +29,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground mb-2"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-2" style={{ fontFamily: "'Sour Gummy', sans-serif" }}
             >
               Ashish Kharuk
             </motion.h1>
@@ -123,7 +123,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-4xl font-heading font-bold text-foreground"
+              className="text-4xl font-bold text-foreground" style={{ fontFamily: "'Sour Gummy', sans-serif" }}
             >
               Ashish Kharuk
             </motion.h1>
