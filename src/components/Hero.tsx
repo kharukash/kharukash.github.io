@@ -14,7 +14,7 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-5xl mx-auto text-center md:text-left">
         {/* Desktop Layout */}
-        <div className="hidden md:flex items-center gap-12 md:pl-[50px]">
+        <div className="hidden md:flex items-center gap-12 md:pl-[120px]">
           {/* Text Content */}
           <div className="flex flex-col items-start">
             <motion.p
