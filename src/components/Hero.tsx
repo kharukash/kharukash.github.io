@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center pt-16 md:pt-16 px-6"
+      className="relative isolate z-0 min-h-screen flex items-center justify-center pt-16 md:pt-16 px-6"
     >
       {/* Vector line art background */}
       <HeroBackground />
@@ -29,7 +29,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-2" style={{ fontFamily: "'Sour Gummy', sans-serif" }}
+              className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-2" style={{ fontFamily: "'Sour Gummy', sans-serif" }}
             >
               Ashish Kharuk
             </motion.h1>
@@ -123,7 +123,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-4xl font-bold text-foreground" style={{ fontFamily: "'Sour Gummy', sans-serif" }}
+              className="text-5xl font-bold text-foreground" style={{ fontFamily: "'Sour Gummy', sans-serif" }}
             >
               Ashish Kharuk
             </motion.h1>
