@@ -7,7 +7,8 @@ const HeroBackground = () => {
         <img
           src={heroWaveBg}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[center_35%] dark:invert-[0.85] dark:opacity-90"
+          className="absolute inset-0 h-full w-full object-cover object-[center_40%] dark:invert-[0.85] dark:opacity-90"
+          style={{ imageRendering: 'auto' }}
         />
         <div className="absolute inset-0 bg-background/10 dark:bg-background/50" />
       </div>
