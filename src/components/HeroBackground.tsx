@@ -8,12 +8,12 @@ const HeroBackground = () => {
         <img
           src={bgLight}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[78%_18%] dark:hidden"
+          className="absolute inset-0 h-[85%] w-[85%] object-contain object-[80%_85%] bottom-0 right-0 ml-auto mt-auto dark:hidden"
         />
         <img
           src={bgDark}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[78%_18%] hidden dark:block"
+          className="absolute inset-0 h-[85%] w-[85%] object-contain object-[80%_85%] bottom-0 right-0 ml-auto mt-auto hidden dark:block"
         />
         <div className="absolute inset-0 bg-background/20 dark:bg-background/45" />
       </div>
