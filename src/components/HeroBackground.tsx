@@ -1,21 +1,15 @@
-import bgLight from "@/assets/bg-light.png";
-import bgDark from "@/assets/bg-dark.png";
+import heroWaveBg from "@/assets/hero-wave-bg.jpg";
 
 const HeroBackground = () => {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
       <div className="sticky top-0 h-screen w-full">
         <img
-          src={bgLight}
+          src={heroWaveBg}
           alt=""
-          className="absolute inset-0 h-[85%] w-[85%] object-contain object-[80%_85%] bottom-0 right-0 ml-auto mt-auto dark:hidden"
+          className="absolute inset-0 h-full w-full object-cover object-[center_35%] dark:invert-[0.85] dark:opacity-90"
         />
-        <img
-          src={bgDark}
-          alt=""
-          className="absolute inset-0 h-[85%] w-[85%] object-contain object-[80%_85%] bottom-0 right-0 ml-auto mt-auto hidden dark:block"
-        />
-        <div className="absolute inset-0 bg-background/20 dark:bg-background/45" />
+        <div className="absolute inset-0 bg-background/10 dark:bg-background/50" />
       </div>
     </div>
   );
